@@ -1,9 +1,12 @@
 package com.example.icarjs.myfirsttest;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.media.AsyncPlayer.*;
 
 
 public class MyActivity extends Activity {
@@ -32,5 +35,10 @@ public class MyActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onBtn_optionClick (View v){
+       Intent optionsActivity = new Intent(MyActivity.this, Options.class);
+        startActivity(optionsActivity);
     }
 }
