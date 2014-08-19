@@ -1,46 +1,24 @@
 package com.example.icarjs.myfirsttest;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
 
-public class MyActivity extends Activity {
-
-    /*
-    View.OnClickListener myHandler1 = new View.OnClickListener(){
-        public void changeView(){
-            startActivity(intent);
-        }
-    };
-    */
+public class CanvasActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my);
-        /*
-        Button buttonPlay = (Button)findViewById(R.id.button);
-        Button buttonOptions = (Button)findViewById(R.id.button2);
-        Button buttonScores = (Button)findViewById(R.id.button3);
-    */
-
-        //ButtonPlay.setOnClickListener(myHandler1);
+        setContentView(R.layout.activity_canvas);
     }
 
-    public void changeView(View view){
-        Intent intent1 = new Intent(this, CanvasActivity.class);
-        this.startActivity(intent1);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.my, menu);
+        getMenuInflater().inflate(R.menu.canvas, menu);
         return true;
     }
 
