@@ -11,7 +11,8 @@
 
     <FrameLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:id="@+id/mainLayout">
 
         <TextView
             android:layout_width="wrap_content"
@@ -20,16 +21,15 @@
             android:text="OPTIONS"
             android:id="@+id/Titre_options"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
             android:textSize="40dp" />
 
         <FrameLayout
             android:layout_width="fill_parent"
-            android:layout_height="164dp"
+            android:layout_height="196dp"
             android:layout_weight="0.16"
             android:layout_alignParentEnd="true"
             android:id="@+id/frameLayout"
-            android:layout_gravity="center_vertical">
+            android:layout_gravity="bottom">
 
             <CheckBox
                 android:layout_width="170dp"
