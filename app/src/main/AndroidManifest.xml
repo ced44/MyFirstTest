@@ -17,6 +17,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".CanvasActivity"
+            android:label="@string/title_activity_canvas" >
+        </activity>
+        <activity
             android:name=".Options"
             android:label="@string/title_activity_options" >
         </activity>

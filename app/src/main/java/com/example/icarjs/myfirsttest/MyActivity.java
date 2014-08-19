@@ -6,17 +6,35 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.media.AsyncPlayer.*;
 
 
 public class MyActivity extends Activity {
+
+    /*
+    View.OnClickListener myHandler1 = new View.OnClickListener(){
+        public void changeView(){
+            startActivity(intent);
+        }
+    };
+    */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+        /*
+        Button buttonPlay = (Button)findViewById(R.id.button);
+        Button buttonOptions = (Button)findViewById(R.id.button2);
+        Button buttonScores = (Button)findViewById(R.id.button3);
+    */
+
+        //ButtonPlay.setOnClickListener(myHandler1);
     }
 
+    public void changeView(View view){
+        Intent intent1 = new Intent(this, CanvasActivity.class);
+        this.startActivity(intent1);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
