@@ -24,6 +24,10 @@
             android:name=".Options"
             android:label="@string/title_activity_options" >
         </activity>
+        <activity
+            android:name=".Scores"
+            android:label="@string/title_activity_scores" >
+        </activity>
     </application>
 
 </manifest>

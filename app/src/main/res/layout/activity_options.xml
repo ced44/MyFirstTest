@@ -25,11 +25,11 @@
 
         <FrameLayout
             android:layout_width="fill_parent"
-            android:layout_height="196dp"
+            android:layout_height="109dp"
             android:layout_weight="0.16"
             android:layout_alignParentEnd="true"
             android:id="@+id/frameLayout"
-            android:layout_gravity="bottom">
+            android:layout_gravity="center">
 
             <CheckBox
                 android:layout_width="170dp"
@@ -40,7 +40,8 @@
                 android:checked="true"
                 android:textAlignment="center"
                 android:enabled="true"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:onClick="onCheck_music" />
 
             <CheckBox
                 android:layout_width="170dp"
@@ -51,18 +52,9 @@
                 android:checked="true"
                 android:textAlignment="center"
                 android:enabled="true"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:onClick="onCheck_sound" />
 
-            <Button
-                android:layout_width="214dp"
-                android:layout_height="wrap_content"
-                android:text="back to menu"
-                android:id="@+id/btn_back"
-                android:layout_gravity="center_horizontal|bottom"
-                android:layout_weight="0.28"
-                android:enabled="true"
-                android:clickable="true"
-                android:textSize="20dp" />
         </FrameLayout>
     </FrameLayout>
 

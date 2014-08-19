@@ -64,7 +64,7 @@
                 android:layout_width="337dp"
                 android:layout_height="wrap_content"
                 android:text="Scores"
-                android:id="@+id/button3"
+                android:id="@+id/btn_scores"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="0.15" />
         </LinearLayout>

@@ -1,12 +1,12 @@
 package com.example.icarjs.myfirsttest;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
@@ -27,26 +27,6 @@ public class Options extends Activity {
         music = (CheckBox) findViewById(R.id.chck_music);
         back = (Button) findViewById(R.id.btn_back);
 
-        back.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                // Create string buffer to
-/*
-                StringBuilder texte = new StringBuilder();
-                texte.append("sound")
-                        .append(sound.isChecked());
-
-                texte.append("\nmusic").append(
-                        music.isChecked());
-
-                Toast.makeText(Options.this, texte.toString(),
-                        Toast.LENGTH_LONG).show();
-                        */
-            }
-        });
-
     }
 
     @Override
@@ -66,5 +46,28 @@ public class Options extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onCheck_sound (View v) {
+        StringBuffer texte = new StringBuffer();
+        texte.append("sound").append(sound.isChecked());
+
+        Toast.makeText(
+                Options.this,
+                texte.toString(),
+                Toast.LENGTH_LONG
+        ).show();
+    }
+
+    public void onCheck_music (View v) {
+        StringBuffer texte2 = new StringBuffer();
+
+        texte2.append("music:").append(music.isChecked());
+
+        Toast.makeText(
+                Options.this,
+                texte2.toString(),
+                Toast.LENGTH_LONG
+        ).show();
     }
 }

@@ -59,4 +59,9 @@ public class MyActivity extends Activity {
        Intent optionsActivity = new Intent(MyActivity.this, Options.class);
         startActivity(optionsActivity);
     }
+
+    public void onBtn_scoresClick (View v){
+        Intent scoresActivity = new Intent(MyActivity.this, Scores.class);
+        startActivity(scoresActivity);
+    }
 }
