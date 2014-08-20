@@ -16,7 +16,6 @@ public class Options extends Activity {
 
     private CheckBox sound;
     private CheckBox music;
-    private Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +24,6 @@ public class Options extends Activity {
 
         sound   = (CheckBox) findViewById(R.id.chck_sound);
         music = (CheckBox) findViewById(R.id.chck_music);
-        back = (Button) findViewById(R.id.btn_back);
-
     }
 
     @Override

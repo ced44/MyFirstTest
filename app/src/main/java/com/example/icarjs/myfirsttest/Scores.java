@@ -9,15 +9,24 @@ import android.view.MenuItem;
 
 public class Scores extends Activity {
 
+    private ScoreDAO myDb = new ScoreDAO(this);
+
+
     private Integer TheBestSCore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scores);
+
+        if( myDb.getDb() != null){
+            myDb.getDb();
+        }
+
         Intent CanvasActivity = getIntent();
         Integer scoreCourant = CanvasActivity.getIntExtra("value",0);
         Integer TheBestSCore = getBestScore(scoreCourant);
+
     }
 
 
@@ -51,9 +60,12 @@ public class Scores extends Activity {
 
     private Integer load_db_bestScore(){
         Integer db_BestScore = 0;
-
-        //code qui recup le score de la base
-
+        myDb.open();
+        if( myDb.selectBestSCore() != null){
+            db_BestScore = myDb.selectBestSCore();
+        }else{
+            db_BestScore = 0;
+        }
         return db_BestScore;
     }
 
