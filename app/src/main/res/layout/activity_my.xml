@@ -31,30 +31,17 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true">
 
-        <Button
-            android:layout_width="337dp"
-            android:layout_height="wrap_content"
-            android:text="Play !!!"
-            android:id="@+id/btn_play"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.10"
-            android:onClick="changeView" />
-
-        <Button
-            android:layout_width="337dp"
-            android:layout_height="wrap_content"
-            android:text="Option"
-            android:id="@+id/btn_option"
-            android:layout_gravity="center_horizontal"
-            android:onClick="onBtn_optionClick" />
-
-        <Button
-            android:layout_width="337dp"
-            android:layout_height="wrap_content"
-            android:text="Scores"
-            android:id="@+id/btn_scores"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.15"
-            android:onClick="onBtn_scoresClick" />
     </LinearLayout>
+
+    <ImageButton
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:text="Play !!!"
+        android:id="@+id/btn_play"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.10"
+        android:onClick="changeView"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ic_launcher" />
 </RelativeLayout>

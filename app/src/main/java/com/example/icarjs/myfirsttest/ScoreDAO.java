@@ -66,12 +66,12 @@ public class ScoreDAO extends DAOBase {
         Cursor mCursor = null;
 
         if (inputText == null  ||  inputText.length () == 0)  {
-            mCursor = mDb.query(TABLE_NAME, new String[] {_ID,
-                            NOM, SCORE},
+            mCursor = mDb.query(TABLE_NAME, new String[] {
+                            _ID, NOM, SCORE},
                     null, null, null, null, null);
         }else {
-            mCursor = mDb.query(true, TABLE_NAME, new String[] {_ID,
-                            NOM, SCORE},
+            mCursor = mDb.query(true, TABLE_NAME, new String[] {
+                            _ID, NOM, SCORE},
                     SCORE + " like '%" + inputText + "%'", null,
                     null, null, null, null);
         }

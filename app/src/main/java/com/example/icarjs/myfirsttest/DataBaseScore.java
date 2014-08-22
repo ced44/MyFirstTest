@@ -34,8 +34,8 @@ public class DataBaseScore extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SCORE_TABLE_CREATE);
-        db.execSQL("INSERT INTO " + SCORE_TABLE_NAME + " VALUES(1,'score 1',100)" );
-        db.execSQL("INSERT INTO " + SCORE_TABLE_NAME + " VALUES(2,'score 2',200)" );
+        db.execSQL("INSERT INTO " + SCORE_TABLE_NAME + " VALUES('1','score 1','100')" );
+        db.execSQL("INSERT INTO " + SCORE_TABLE_NAME + " VALUES('2','score 2','200')" );
         Log.w(TAG, SCORE_TABLE_CREATE);
     }
 

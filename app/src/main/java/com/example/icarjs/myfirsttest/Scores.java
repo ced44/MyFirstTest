@@ -19,27 +19,29 @@ public class Scores extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_scores);
+
         data_score = new ScoreDAO(this);
         data_score.open(this);
-        cListeScore = data_score.getScore_data();
+        cListeScore = data_score.fetchAllScores();
 
 
         SimpleCursorAdapter adapter = new
-                SimpleCursorAdapter(this,
-                android.R.layout.simple_list_item_1,
-                cListeScore,
-                new String[] {"nom","score"},
-                new int[] {android.R.id.text1,android.R.id.text2});
+                SimpleCursorAdapter(
+                  this,
+                  android.R.layout.list_content,
+                  cListeScore,
+                  new String[] {"nom"},
+                  new int[] {R.id.nom,},
+                  1
+                );
 
         setListAdapter(adapter);
 
         startManagingCursor(cListeScore);
 
         cListeScore.requery();
-
-        View text1 = findViewById(android.R.id.text1);
-        View text2 = findViewById(android.R.id.text2);
 
 
         Intent CanvasActivity = getIntent();

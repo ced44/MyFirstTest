@@ -1,8 +1,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MyActivity" >
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never" />
+
+    <item android:id="@+id/menu_score"
+        android:title="@string/action_score"
+        android:orderInCategory="200"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/ic_action_score"/>
+
+    <item android:id="@+id/menu_settings"
+        android:title="@string/menu_settings"
+        android:orderInCategory="300"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/ic_action_settings"/>
+
+    <item android:id="@+id/menu_about"
+        android:title="@string/action_about"
+        android:orderInCategory="1000"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/ic_action_about"/>
 </menu>

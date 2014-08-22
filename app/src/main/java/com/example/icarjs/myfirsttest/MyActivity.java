@@ -1,7 +1,9 @@
 package com.example.icarjs.myfirsttest;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -10,29 +12,22 @@ import android.view.MenuItem;
 
 public class MyActivity extends Activity {
 
-    /*
-    View.OnClickListener myHandler1 = new View.OnClickListener(){
-        public void changeView(){
-            startActivity(intent);
-        }
-    };
-    */
+    private Intent intent_about;
+    private Intent intent_score;
+    private Intent intent_settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
-        /*
-        Button buttonPlay = (Button)findViewById(R.id.button);
-        Button buttonOptions = (Button)findViewById(R.id.button2);
-        Button buttonScores = (Button)findViewById(R.id.button3);
-    */
 
-        //ButtonPlay.setOnClickListener(myHandler1);
+        intent_about = new Intent(MyActivity.this, About.class);
+        intent_score = new Intent(MyActivity.this, Scores.class);
+        intent_settings = new Intent(MyActivity.this, Options.class);
     }
 
     public void changeView(View view){
-        Intent intent1 = new Intent(this, CanvasActivity.class);
+        Intent intent1 = new Intent(this, MyActivity.class);
         this.startActivity(intent1);
     }
 
@@ -40,6 +35,10 @@ public class MyActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.my, menu);
+        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.HONEYCOMB){
+            ActionBar actionBar = getActionBar();
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
         return true;
     }
 
@@ -49,19 +48,21 @@ public class MyActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+
+        switch (id){
+            case android.R.id.home:
+                onBackPressed();
+            case R.id.menu_about:
+                startActivity(intent_about);
+                return true;
+            case R.id.menu_score:
+                startActivity(intent_score);
+                return true;
+            case R.id.menu_settings:
+                startActivity(intent_settings);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
-    }
-
-    public void onBtn_optionClick (View v){
-       Intent optionsActivity = new Intent(MyActivity.this, Options.class);
-        startActivity(optionsActivity);
-    }
-
-    public void onBtn_scoresClick (View v){
-        Intent scoresActivity = new Intent(MyActivity.this, Scores.class);
-        startActivity(scoresActivity);
     }
 }

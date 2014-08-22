@@ -18,8 +18,8 @@ public class Circle {
     }
 
     boolean inView(int width, int height) {
-        return (0 <= centerX) && (centerX < width)
-                && (0 <= centerY) && (centerY < height);
+        return (0+radius <= centerX) && (centerX < width-radius)
+                && (0+radius <= centerY) && (centerY < height-radius);
     }
 
 }
