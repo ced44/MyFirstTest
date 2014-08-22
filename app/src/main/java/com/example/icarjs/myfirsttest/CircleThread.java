@@ -1,6 +1,7 @@
 package com.example.icarjs.myfirsttest;
 
 import android.content.Context;
+import android.os.Handler;
 import android.view.View;
 
 /**
@@ -10,6 +11,7 @@ import android.view.View;
 /*
 public class CircleThread extends Runnable {
 
+    Handler mHandler = new Handler();
     @Override
     public void run() {
         runDrawing(); // 1 cercle par thread
