@@ -18,10 +18,10 @@ import java.util.Random;
  * Created by icarjs on 21/08/14.
  */
 
-/*
-public class Display extends View {
 
-    private static Display instance = null;
+public class DisplayView extends View {
+
+    private static DisplayView instance = null;
     Collection<Circle> circles = new ArrayList<Circle>();
     Circle draggedCircle = null;
     float draggedOriginalCenterX;
@@ -31,24 +31,30 @@ public class Display extends View {
     Random random = new Random();
     Paint backPaint;
     Paint circlePaint;
-    Context context = null;
+    static Context context = null;
+    Circle circle = null;
 
-    protected Display(Context context) {
+    private DisplayView(Context context) {
 
         super(context);
     }
 
-    public static Display getInstance(Context context) {
+    public static DisplayView getInstance(Context context) {
 
         if(instance == null) {
 
-            instance = new Display(context);
-            this.context = context;
+            instance = new DisplayView(context);
+            DisplayView.context = context;
             return instance;
         }
         else {
             return instance;
         }
+    }
+
+    public static Context getDisplayContext() {
+
+        return DisplayView.context;
     }
 
     public Context getContextSingleton(){
@@ -69,7 +75,7 @@ public class Display extends View {
 
     void init() {
         backPaint = new Paint();
-        backPaint.setColor(Color.WHITE);
+        backPaint.setColor(Color.GREEN);
         backPaint.setStyle(Paint.Style.FILL);
         circlePaint = new Paint();
         circlePaint.setStyle(Paint.Style.FILL);
@@ -95,7 +101,7 @@ public class Display extends View {
                         return true;
                     }
                     */
-/*
+
                 if (MotionEvent.ACTION_UP == event.getActionMasked()) {
                     touchUp(
                             event.getX(event.getActionIndex()),
@@ -117,7 +123,7 @@ public class Display extends View {
                         draggedStartX = fx;
                         draggedStartY = fy;
                         */
-/*
+
                 } else {
                     Circle circle = new Circle();
                     circle.centerX = fx;
@@ -126,7 +132,7 @@ public class Display extends View {
                     circle.fillColor = 0xff000000;
                     circles.add(circle);
                 }
-                invalidate();
+                //postInvalidate();
             }
 
             /*
@@ -141,7 +147,7 @@ public class Display extends View {
                 }
             }
             */
-/*
+
             private void touchUp(float fx, float fy) {
                 if (null != draggedCircle) {
                     if (!draggedCircle.inView(getWidth(), getHeight())) {
@@ -150,26 +156,28 @@ public class Display extends View {
                     }
                     // stop dragging
                     draggedCircle = null;
-                    invalidate();
+                    //postInvalidate();
                 }
             }
 
         });
     }
-
-    public void drawing(Display display){
+/*
+    public void drawing(DisplayView display){
         MyThread mt = new MyThread();
         Handler myHandler = new Handler();
-        for (int ii =0; ii<5; ii++) {
-            myHandler.postDelayed(mt, 200);
-        }
+        myHandler.postDelayed(mt, 200);
+        System.out.println("un cercle a été créer !!!!!");
         display.invalidate();
     }
-
+*/
     @Override
     protected void onDraw(Canvas canvas) {
         Log.w("warning", "onDraw");
+
         canvas.drawRect(0, 0, getWidth(), getHeight(), backPaint);
+        System.out.println("longueur de l'écran "+ getWidth() +"  :  largeur de l'écran  :  "+getHeight());
+
         for (Circle circle : circles) {
             System.out.println(circle.centerX + "  :  " + circle.centerY);
             circlePaint.setColor(circle.fillColor);
@@ -187,5 +195,5 @@ public class Display extends View {
     }
 
 }
-*/
+
 
