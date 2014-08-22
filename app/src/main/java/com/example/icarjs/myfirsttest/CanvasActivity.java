@@ -70,6 +70,7 @@ public class CanvasActivity extends Activity {
 
             }
             else {
+                playSound(SOUND1, 1);
                 mHandler.removeCallbacks(monThread);
                 realDisplay.circles.clear();
                 Context context = getApplicationContext();
@@ -226,7 +227,7 @@ public class CanvasActivity extends Activity {
         setContentView(realDisplay);
         soundPool = new SoundPool(4, AudioManager.STREAM_MUSIC, 100);
         soundsMap = new HashMap<Integer, Integer>();
-        soundsMap.put(SOUND1, soundPool.load(this, R.raw.Tetris, 1));
+        soundsMap.put(SOUND1, soundPool.load(this, R.raw.tetris2, 1));
         System.out.println("-------------------------" + soundsMap.get(1) + "------------------------");
         //soundsMap.put(SOUND2, soundPool.load(this, R.raw.mafia2, 1));
         //mHandler.postDelayed(monThread, 1000);// déclenchement des thread
@@ -242,14 +243,14 @@ public class CanvasActivity extends Activity {
             e.printStackTrace();
 
         }
-        */
+
         mp.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             public void onPrepared(MediaPlayer mp) {
                 playSound(SOUND1, 1);
             }
         });
         mp.prepareAsync();
-
+        */
         //playSound(SOUND1, 1);
     }
 
