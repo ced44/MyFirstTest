@@ -27,7 +27,7 @@ public class MyActivity extends Activity {
     }
 
     public void changeView(View view){
-        Intent intent1 = new Intent(this, MyActivity.class);
+        Intent intent1 = new Intent(this, CanvasActivity.class);
         this.startActivity(intent1);
     }
 

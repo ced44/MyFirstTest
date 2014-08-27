@@ -59,7 +59,7 @@ public class CanvasActivity extends Activity {
         @Override
         public void run() {
             if(!getGameOver()) {
-                mHandler.postDelayed(monThread, 5000);
+                mHandler.postDelayed(monThread, 2000);
 
                 System.out.println("Mon Thread ressemble à ça  ===> ");
                 System.out.println("Mon Thread ressemble à ça  ===> "+monThread.toString());
